@@ -13,6 +13,7 @@ TARGET := example
 $(TARGET):$(OBJ)
 	$(cc) $(CFLAGS) $? -o $(@)
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	mkdir -p $(@D)
 	$(cc) $(CFLAGS) -c $< -o $@
 
 clean:
